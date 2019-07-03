@@ -75,7 +75,7 @@ public class EinfacheAufgabe extends Aufgabe
         switch(typ) {
             case 1:
             typString = "+";
-            punkte = 10;
+            punkte = 5;
             controller.neueAufgabe(zahl1, zahl2, "+");
             break;
 
@@ -83,7 +83,7 @@ public class EinfacheAufgabe extends Aufgabe
             //zahl1 = random.nextInt(100);
             //zahl2 = random.nextInt(90);
             typString = "-";
-            punkte = 20;
+            punkte = 10;
             controller.neueAufgabe(zahl1, zahl2, "-");
             break;
 
@@ -91,7 +91,7 @@ public class EinfacheAufgabe extends Aufgabe
             //zahl1 = random.nextInt(22);
             //zahl2 = random.nextInt(22);
             typString = "*";
-            punkte = 25;
+            punkte = 12;
             controller.neueAufgabe(zahl1, zahl2, "*");
             break;    
             case 4:
@@ -100,7 +100,7 @@ public class EinfacheAufgabe extends Aufgabe
             while(zahl2 == 0){
                 zahl2 = random.nextInt(20);
             }
-            punkte = 2;
+            punkte = 15;
             controller.neueAufgabe(zahl1, zahl2, "/");
             break;
         }

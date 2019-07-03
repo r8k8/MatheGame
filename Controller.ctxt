@@ -12,5 +12,4 @@ comment4.target=void\ initialize()
 comment4.text=\r\n\ Diese\ Methode\ wird\ aufgerufen,\ wenn\ alle\ Label\ und\ Button\ vom\ Loader\ erstellt\ worden\ sind\r\n
 comment5.params=
 comment5.target=int\ getPunkte()
-comment5.text=public\ int\ schwierigkeiterh\u00F6hen(){\r\n\ \ \ \ \ \ \ \ if\ (punkte\ >\=\ 30){\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ random.nextInt(4)+1;\r\n\ \ \ \ \ \ \ \ }\ else\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ return\ random.nextInt(2)+1;\r\n\ \ \ \ \ \ \ \ }\r\n}
 numComments=6

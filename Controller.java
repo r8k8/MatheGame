@@ -9,12 +9,17 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.input.KeyCode;
 import java.util.Random;
 import java.io.IOException;
+import javax.swing.Timer;
+
+import javax.swing.JToggleButton;
+import javax.swing.SwingUtilities;
+import java.awt.event.ActionListener;
 public class Controller
 {
     // Anzeige der erreichten Punkte
     @FXML 
     private Label lblPunkte; 
-    
+
     // Der Button Prüfen oder Weiter
     @FXML
     private Button button;
@@ -22,6 +27,9 @@ public class Controller
     // Anzeige der Aufgabe
     @FXML
     private StackPane inhalt;
+
+    @FXML
+    private Label timer2;
 
     // Aufgabe, die gerade angezeigt wird
     private Aufgabe a;
@@ -36,6 +44,11 @@ public class Controller
     // Zustand
     int zustand; // 0: Aufgabe gestellt / 1: Antwort getippt
 
+    
+    //private Timer timer;
+    
+
+   
     /*
      * Wenn auf den Button geklickt wurde, wird diese Methode aufgerufen
      * Je nach Zustand wird etwas anderes auf dem Button angezeigt und tut
@@ -46,18 +59,16 @@ public class Controller
     void buttonGeklickt(ActionEvent event) {
         check();
     }
-   
-    
+
     public void check(){
-        
-     switch (zustand)
+        switch (zustand)
         {
             case 0: { // Zustand Aufgabe gestellt
-                
+
                 // Es wird überprüft, ob die richtige Lösung eingegeben wurde
 
                 boolean ergebnis = a.loesungUeberpruefen(a.getTyp());
-                
+
                 if (ergebnis)
                 {
                     // Richtig
@@ -85,23 +96,21 @@ public class Controller
             } break;
 
         }   
-        
-        
-        
+
         
     }
-    
     @FXML
     void keyPressed(KeyEvent event) {
         System.out.println("abc");
         if (event.getCode() == KeyCode.ENTER){
-             check();   
+            check();   
         }
     }
+
     /*
      * Diese Methode wird aufgerufen, wenn alle Label und Button vom Loader erstellt worden sind
      */
-  
+
     @FXML 
     void initialize() {      
         // Erstellt eine neue Einfache Aufgabe
@@ -114,15 +123,9 @@ public class Controller
         // Die Anwendung befindet sich im Zustand Aufgabe gestellt
         zustand = 0;
         lblErgebnis.setText("");
+      
     }
-    
-    /*public int schwierigkeiterhöhen(){
-        if (punkte >= 30){
-            return random.nextInt(4)+1;
-        } else {
-            return random.nextInt(2)+1;
-        }
-    }*/
+
     public int getPunkte(){
         return punkte;
     }
